@@ -1,1 +1,1 @@
-web: gunicorn ScholarsBank_final.wsgi --log-file - 
+web: gunicorn scholars_.wsgi --log-file - 
