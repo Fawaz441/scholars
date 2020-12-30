@@ -1,0 +1,87 @@
+{% load static %}
+<div class="backdrop"></div>
+<nav>
+    <div class="brand">
+        <a style="color:#fff;" href="{% url 'scholars:homepage' %}">
+        <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="6.08445in" height="6.08445in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 608 608"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:#FA8231}
+    .fil1 {fill:white}
+    .fil2 {fill:white;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <circle class="fil0" cx="304" cy="304" r="304"/>
+  <g id="_993804778368">
+   <path class="fil1" d="M304 92c59,0 112,24 150,62 38,39 62,92 62,150 0,59 -24,112 -62,150 -38,38 -91,62 -150,62 -58,0 -111,-24 -150,-62 -38,-38 -62,-91 -62,-150 0,-58 24,-111 62,-150 39,-38 92,-62 150,-62zm7 21l46 99 109 -9 7 0c-8,-14 -18,-27 -29,-38 -35,-35 -83,-57 -136,-58l3 6zm166 95l-4 6 -62 90 62 90 4 6c16,-28 25,-61 25,-96 0,-35 -9,-67 -25,-96zm-4 198l-7 -1 -109 -9 -46 99 -3 7c53,-1 101,-23 136,-58 11,-12 21,-24 29,-38zm-172 96l-3 -7 -47 -99 -109 9 -7 1c8,14 18,26 30,38 35,35 83,57 136,58zm-169 -102l4 -6 62 -90 -62 -90 -4 -6c-16,29 -25,61 -25,96 0,35 9,68 25,96zm3 -197l7 0 109 9 47 -99 3 -6c-53,1 -101,23 -136,58 -12,11 -22,24 -30,38zm212 20l-43 -90 -42 90 -2 4 -5 0 -99 -8 57 81 2 4 -2 4 -57 82 99 -8 5 -1 2 5 42 89 43 -89 2 -5 5 1 98 8 -56 -82 -3 -4 3 -4 56 -81 -98 8 -5 0 -2 -4z"/>
+   <path class="fil1" d="M304 49c71,0 134,29 180,75 47,46 75,110 75,180 0,71 -28,134 -75,180 -46,47 -109,75 -180,75 -70,0 -134,-28 -180,-75 -46,-46 -75,-109 -75,-180 0,-70 29,-134 75,-180 46,-46 110,-75 180,-75zm170 85c-43,-43 -103,-70 -170,-70 -66,0 -126,27 -170,70 -43,44 -70,104 -70,170 0,67 27,127 70,170 44,44 104,71 170,71 67,0 127,-27 170,-71 44,-43 71,-103 71,-170 0,-66 -27,-126 -71,-170z"/>
+   <circle class="fil1" cx="78" cy="304" r="8"/>
+   <path class="fil2" d="M264 340c-5,0 -11,0 -16,-2 -5,-1 -9,-3 -12,-6l5 -12c3,2 7,4 11,5 4,2 8,2 12,2 5,0 8,0 11,-2 2,-1 3,-3 3,-5 0,-2 -1,-3 -2,-4 -1,-1 -3,-2 -5,-3 -2,-1 -5,-1 -8,-2 -6,-1 -10,-3 -13,-4 -4,-1 -7,-3 -9,-6 -3,-3 -4,-6 -4,-11 0,-4 1,-8 4,-11 2,-3 5,-6 10,-8 4,-2 9,-3 16,-3 4,0 9,1 13,2 4,1 8,2 11,4l-5 13c-6,-4 -13,-6 -19,-6 -5,0 -8,1 -10,2 -3,2 -4,4 -4,6 0,2 2,4 4,5 3,2 6,3 12,4 5,1 9,2 13,4 3,1 6,3 8,6 3,2 4,6 4,11 0,4 -1,7 -3,11 -3,3 -6,6 -10,7 -5,2 -10,3 -17,3z"/>
+   <path id="1" class="fil2" d="M360 303c4,1 7,3 9,6 2,3 4,7 4,11 0,6 -3,11 -8,14 -4,4 -11,5 -20,5l-37 0 0 -70 35 0c8,0 15,2 19,5 5,3 7,8 7,13 0,4 -1,7 -2,10 -2,2 -4,4 -7,6zm-35 -22l0 17 16 0c4,0 7,-1 9,-2 2,-2 3,-4 3,-6 0,-3 -1,-5 -3,-7 -2,-1 -5,-2 -9,-2l-16 0zm18 46c5,0 8,-1 10,-2 2,-1 3,-4 3,-7 0,-5 -4,-8 -13,-8l-18 0 0 17 18 0z"/>
+   <circle class="fil1" cx="534" cy="304" r="8"/>
+  </g>
+ </g>
+</svg>
+
+        </a>
+    </div>
+    <ul>
+        {% if request.user.is_superuser %}
+        <li><a href="{% url 'scholars:agba' %}">Agba</a></li>
+        {% endif %}
+        <li><a href="{% url 'scholars:materials' %}">Materials</a></li>
+        <li><a href="{% url 'scholars:universities' %}">PQs</a></li>
+        <li><a href="{% url 'scholars:adverts' %}" class="ads">Adverts <span></span></a>
+     
+        </li>
+        {% if not request.user.is_authenticated %}
+        <li><a href="{% url 'users:login' %}" class="login_btn_cta">Log In</a></li>
+        {% else %}
+        <li><a href="{% url 'users:logout' %}">Log out</a></li>
+        {% endif %}
+    </ul>
+    <div id="nav_small">
+        <span></span>
+        <span></span>
+     
+    </div>
+</nav>
+
+<div class="mobile_big">
+    <ul>
+        {% if request.user.is_superuser %}
+        <li><a href="{% url 'scholars:agba' %}">Agba</a></li>
+        {% endif %}
+        <li><a href="{% url 'scholars:materials' %}">Materials</a></li>
+        <li><a href="{% url 'scholars:universities' %}">PQs</a></li>
+        <li><a href="{% url 'scholars:adverts' %}" >Adverts <span></span></a>
+        </li>
+        {% if not request.user.is_authenticated %}
+        <li><a href="{% url 'users:login' %}" class="mobile_login_btn_cta">Log In</a></li>
+        {% else %}
+        <li><a href="{% url 'users:logout' %}">Log out</a></li>
+        {% endif %}
+    </ul>
+</div>
+
+
+<script src="{% static 'js/base.js' %}"></script>
+<script>
+    var hamb = document.querySelector("#nav-icon2");
+    var bdrop = document.querySelector(".backdrop");
+    var mobile_nav = document.querySelector(".mobile_big");
+    hamb.addEventListener("click",() => {
+        mobile_nav.classList.toggle("outside");
+        bdrop.classList.toggle("bdrop_block");
+        hamb.classList.toggle('open');
+    })
+</script>

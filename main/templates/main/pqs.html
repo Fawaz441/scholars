@@ -1,0 +1,13 @@
+{% extends 'main/materials.html' %}
+{% load static %}
+{% block title %}Past Questions{% endblock %}
+{% block css %} {{block.super}} {% endblock css%}
+{% block others %}{% endblock others %}
+{% block header %}{{object.university.abbreviation}} {{object.abbreviation}} {% endblock header %}
+{% block filter %}
+{% for pq in object.pq_set.all %}
+<li>{{pq.name}}<a href="{{pq.file.url}}"><span><i style="color:#fff;" class="fa fa-download"></i></span></a></li>
+{% empty %}
+<li><p>No Past Question for this course yet.</p></li>
+{% endfor %}
+{% endblock filter %}

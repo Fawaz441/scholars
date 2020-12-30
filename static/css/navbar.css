@@ -1,0 +1,46 @@
+*{margin:0;padding:0;font-family:Montserrat}
+body{overflow-x:hidden}
+.white_txt{color:#fff}
+.backdrop{height:100vh;width:100vw;background:rgba(0,0,0,.637);display:none;position:fixed}
+.bdrop_block{display:block!important;opacity:1}
+.inline{display:inline}
+a{text-decoration:none}
+ul{list-style:none}
+nav{height:80px;display:flex;align-items:center;justify-content:space-between}
+nav{padding:0 30px 0 50px;z-index:4}
+nav ul{display:flex}
+nav ul li{margin-right:3rem;position:relative}
+nav ul li ul{position:absolute;flex-direction:column;margin-top:10px;padding:.5rem .2rem 0 .2rem;background:rgba(0,0,0,.637);display:none;animation:slide-up .4s cubic-bezier(.175,.885,.32,1.275) forwards}
+@keyframes slide-up{
+0%{transform:translateY(30px)}
+100%{transform:translateY(0)}
+}
+nav ul li:hover ul{display:block}
+nav ul li ul:hover{display:block}
+nav ul li ul:before{position:absolute;content:'';border-left:10px solid transparent;border-bottom:10px solid rgba(0,0,0,.637);border-right:10px solid transparent;top:-10px;left:0;border-radius:2px}
+nav ul li ul li{margin:0 .5rem .4rem .5rem;font-size:.9rem}
+nav ul li a{color:#fff;transition:color .5s cubic-bezier(.175,.885,.32,1.275)}
+nav ul li a:hover{color:#fa8231}
+.login_btn_cta{padding:10px 30px;background:#fa8231;border-radius:20px}
+nav ul li .login_btn_cta:hover{color:#fff}
+.brand{display:flex;align-items:center;justify-content:center;height:70px;width:70px;border-radius:50%;background:#fa8231;color:#fff}
+.brand svg{height:100%;width:100%}
+#nav_small,.mobile_big{display:none}
+#nav_small{position:relative;cursor:pointer;right:2rem}
+#nav_small span{border-radius:50px;display:block;height:3px;background:#000;transition:.4s cubic-bezier(.6,-.28,.735,.045)}
+#nav_small span:first-of-type{width:37px}
+#nav_small span:nth-of-type(2){width:30px;margin-top:.4rem}
+#nav_small.expanded span:first-of-type{transform:rotate(135deg) translateY(-2px)}
+#nav_small.expanded span:nth-of-type(2){transform:rotate(45deg) translateY(-6px)}
+.mobile_big{display:none;height:50vh;z-index:4;position:fixed;width:250px;background:#fff;flex-direction:column;align-items:center;border-radius:3px;margin-left:-120%;transition:.5s ease}
+.outside{margin-left:0}
+.mobile_big ul{margin-top:10vh}
+.mobile_big ul li{margin-bottom:1.6rem}
+.mobile_big ul li a{color:#000}
+.mobile_big .mobile_login_btn_cta{padding:10px 1.5rem;background:#fa8231;color:#fff;border-radius:5px}
+@media(max-width:450px){
+nav{padding-left:20px}
+nav ul{display:none}
+.mobile_big{display:flex}
+#nav_small{display:block}
+}

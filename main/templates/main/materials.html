@@ -1,0 +1,100 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/materials.css' %}">
+{% endblock css %}
+
+{% block content %}
+<header>
+    {% include 'navbar.html' %}
+    <div class="slides">
+        <div class="slide fade">
+            <img src="images/advert (1).jpg" alt="">
+            <div class="text">Caption Text 1</div>
+        </div>
+        <div class="slide fade">
+            <img src="images/advert (2).jpg" alt="">
+            <div class="text">Caption Text 2</div>
+        </div>
+        <div class="slide fade">
+            <img src="images/advert (3).jpg" alt="">
+            <div class="text">Caption Text 3</div>
+        </div>
+        <div class="slide fade">
+            <img src="images/advert (4).jpg" alt="">
+            <div class="text">Caption Text 4</div>
+        </div>
+    </div>
+    <div style="text-align:center;">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</header>
+<form action="" method="get">
+    {% include 'main/search.html' %}
+</form>
+{% block others %}
+<div class="materials_grid">
+    <div class="materials_list">
+        <h2>Most Downloaded Materials <i class="fa fa-book"></i></h2>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur.<a href=""><span><i style="color:#fff;"
+                            class="fa fa-download"></i></span></a></li>
+            <li>Lorem ipsum dolor sit amet consectetur.<a href=""><span><i style="color:#fff;"
+                            class="fa fa-download"></i></span></a></li>
+            <li>Lorem ipsum dolor sit amet consectetur.<a href=""><span><i style="color:#fff;"
+                            class="fa fa-download"></i></span></a></li>
+            <li>Lorem ipsum dolor sit amet consectetur.<a href=""><span><i style="color:#fff;"
+                            class="fa fa-download"></i></span></a></li>
+            <li>Lorem ipsum dolor sit amet consectetur.<a href=""><span><i style="color:#fff;"
+                            class="fa fa-download"></i></span></a></li>
+            <li>Lorem ipsum dolor sit amet consectetur.<a href=""><span><i style="color:#fff;"
+                            class="fa fa-download"></i></span></a></li>
+
+        </ul>
+    </div>
+    <div class="search_by">
+        <h3>Filter Materials:</h3>
+        <ul>
+            <li><a href="#">Physics</a></li>
+            <li><a href="#">Medicine</a></li>
+            <li><a href="#">Engineering</a></li>
+            <li><a href="#">General Science</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock others %}
+<div class="all_materials">
+    <h1>{% block header %}All Materials {% endblock header %}</h1>
+    <ul style="background: rgb(238, 233, 233)">{% block filter %}
+        {% for material in object_list %}
+        <li>{{material.name}}<a href="{{material.file.url}}"><span><i style="color:#fff;"
+                        class="fa fa-download"></i></span></a></li>
+        {% empty %}
+        <p>No materials added yet.</p>
+        {% endfor %}
+
+        {% endblock filter %}
+    </ul>
+</div>
+</div>
+<style>
+    #nav-icon2 {
+        margin-right: 2.5rem;
+        /* z-index:5; */
+
+    }
+
+    .backdrop {
+        z-index: 2;
+    }
+</style>
+{% include 'footer.html' %}
+{% block js %}
+<script src="{% static 'js/bubbles.js' %}"></script>
+<script src="{% static 'js/scroll.js' %}"></script>
+{% endblock js %}
+
+{% endblock content %}

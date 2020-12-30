@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock css %}
+{% block content %}
+{% include 'navbar.html' %}
+{% if form.errors %}
+<center>
+    <span class="errors">{{form.non_field_errors}}</span>
+</center>
+{% endif %}
+<div class="form-wrapper">
+    <h1>Log In</h1> 
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <div class="submit">
+            <input type="submit" value="LOGIN">
+        </div>
+    </form> 
+    <div class="lost-password">
+        <a href="{% url 'users:signup' %}" class="firs">Don't have an account?</a>
+        <a href="#">Forgot Password?</a>
+    </div>
+</div>
+<style>
+    .login_btn_cta{display:none;}
+</style>
+{% endblock %}

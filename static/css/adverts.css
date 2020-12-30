@@ -1,0 +1,122 @@
+html,body{
+    margin:0;
+    height:100%;
+    width:100%;
+    padding:0;
+    background:#fbefdb;
+    font-family:Montserrat;
+    position:relative;
+    overflow-x:hidden;
+}
+
+*{margin:0;padding:0;}
+
+a{
+    text-decoration:none;
+}
+
+
+
+.adverts{
+    /* margin-top:70px; */
+    position: relative;
+}
+.adverts h2{color:rgb(223, 103, 33);}
+.scroll-left,.scroll-right{
+    background:rgba(2, 1, 1, 0.363);
+    height:50px;
+    width:50px;
+    border-radius:50%;
+    display:inline-flex;
+    position: absolute;
+    top:45%;
+    align-items:center;
+    justify-content: center;
+    left:40px;
+    cursor:pointer;
+}
+
+.scroll-left:hover,.scroll-right:hover{
+    background:rgba(0, 0, 0, 0.575);
+}
+
+.scroll-right{left:auto;right:40px;}
+.scroll-left span,.scroll-right span{
+    width:10px;
+    height:10px;
+    border-left: 2px solid #fff;
+    border-bottom:2px solid #fff;
+}
+
+.scroll-left span{transform:translate(2px) rotate(45deg);}
+.scroll-right span{transform:translate(-2px) rotate(-135deg);}
+
+
+.adverts_wrapper{
+    width:80%;
+    overflow:auto;
+    white-space:nowrap;
+    height:350px;
+   scroll-behavior: smooth;
+    margin:2rem auto;
+}
+
+.adverts_wrapper::-webkit-scrollbar{
+    display:none;
+}
+
+.advert{
+    display:inline-block;
+    height:300px;
+    width:300px;
+    position:relative;
+    margin-right:1.5rem;
+    box-shadow:1px 1px 6px 3px rgba(54, 4, 4, 0.281);
+}
+
+.advert img{
+    width:100%;height:100%;
+    position:absolute;
+}
+
+.overlay{
+    position:absolute;
+    left:0;
+    top:0;
+    background:rgba(0, 0, 0, 0.26);
+    height:100%;
+    width:100%;
+    transition:0.4s all ease-in;
+    color:#fff;
+}
+
+.overlay span{
+    display:block;
+    text-align:center;
+    position:absolute;
+}
+
+.title{
+    bottom:30px;
+    right:1rem;
+}
+
+.price{
+    bottom:0;
+    right:1rem;
+}
+
+.advert:hover .overlay{
+    opacity:0;
+}
+
+
+@media(max-width:500px){
+    .scroll-left{
+        display:none;
+    }
+.adverts_wrapper{
+    margin:0;
+    width:100%;
+}
+

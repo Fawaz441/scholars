@@ -1,0 +1,40 @@
+{% extends 'main/materials.html' %}
+{% block others %}
+<form action="{% url 'scholars:universities' %}" method="get">
+    {% include 'main/search.html' %}
+</form>
+{% endblock others %}
+{% block header %}Universities{% endblock header %}
+{% block filter %}
+{% for uni in object_list %}
+
+    <a style="color:#fff;" href="{% url 'scholars:courses' slug=uni.slug %}">
+        <li> {{uni.name|truncatechars:20}} <span style="position:absolute;right:1rem;">{{uni.abbreviation}}</span></li>
+    </a>
+{% empty %}
+<p>No university matches your keywords.</p>
+{% endfor %}
+<style>
+    .all_materials{text-align: center;}
+    .all_materials ul{margin:auto;}
+    .all_materials ul li{position:relative;}
+</style>
+<script>
+    var searchbox = document.querySelector('body > form > div > div.fletch > input');
+    var lists = document.querySelectorAll('body > form > div > div.all_materials > ul > a ');
+    searchbox.addEventListener('input',() => {
+        var info = searchbox.value.toLowerCase();
+        for(let i=0;i<lists.length;i++){
+            console.log(lists[i].innerText)
+            if(lists[i].innerText.toLowerCase().indexOf(info) > -1){
+                lists[i].style.display = 'block';
+            }
+            else{
+                lists[i].style.display = 'none';
+            }
+    }
+    })
+  
+</script>
+
+{% endblock filter %}

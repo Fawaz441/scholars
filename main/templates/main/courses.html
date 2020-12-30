@@ -1,0 +1,36 @@
+{% extends 'main/materials.html' %}
+{% block others %}{% endblock others %}
+{% block header %}
+{{object.name}}
+<span style="display:block;font-size:1.2rem;">Courses</span>
+{% endblock header %}
+{% block filter %}
+{% for course in object.courses.all %}
+    <a style="color:#fff;" href="{% url 'scholars:pqs' slug=course.slug %}">
+        <li> {{course.abbreviation}} ({{course.name}})</li>
+    </a>
+{% empty %}
+<p>No courses added yet.</p>
+{% endfor %}
+<style>
+    .all_materials{text-align: center;}
+    .all_materials ul{margin:auto;}
+</style>
+<script>
+    var searchbox = document.querySelector('body > form > div > div.fletch > input');
+    var lists = document.querySelectorAll('body > form > div > div.all_materials > ul > a ');
+    searchbox.addEventListener('input',() => {
+        var info = searchbox.value.toLowerCase();
+        for(let i=0;i<lists.length;i++){
+            console.log(lists[i].innerText)
+            if(lists[i].innerText.toLowerCase().indexOf(info) > -1){
+                lists[i].style.display = 'block';
+            }
+            else{
+                lists[i].style.display = 'none';
+            }
+    }
+    })
+  
+</script>
+{% endblock filter %}
