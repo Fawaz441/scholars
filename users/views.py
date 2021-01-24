@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import login,authenticate,logout
+from django.contrib import messages
 
 from .forms import SignupForm,LoginForm
 from .models import Profile
@@ -40,7 +41,10 @@ def login_view(request):
                 user = authenticate(username=username,password=password)
                 if user:
                     login(request,user)
+                    messages.info(request,f'Welcome back, {user.username}')
                     return redirect('users:dashboard')
+                messages.error(request,'Wrong credentials')
+                return redirect('users:login')
         else:
             form = LoginForm()
         return render(request,'users/login.html',{'form':form})

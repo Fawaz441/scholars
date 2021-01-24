@@ -5,11 +5,6 @@
 {% endblock css %}
 {% block content %}
 {% include 'navbar.html' %}
-{% if form.errors %}
-<center>
-    <span class="errors">{{form.non_field_errors}}</span>
-</center>
-{% endif %}
 <div class="form-wrapper">
     <h1>Log In</h1> 
     <form action="" method="post">

@@ -37,7 +37,7 @@ class LoginForm(forms.Form):
         username = cleaned_data.get('username')
         username_query = User.objects.filter(username=username)
         if not username_query.exists():
-            raise forms.ValidationError("{} does not exist ".format(username))
+            raise forms.ValidationError("{} does not exist".format(username))
 
 
 

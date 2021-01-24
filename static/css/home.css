@@ -4,7 +4,7 @@ header{
 header{
     height:100vh;
     background:linear-gradient(90deg,rgba(0,0,0,0.2),rgba(0,0,0,1)),url("../images/welcome1.jpg") no-repeat center center/cover;
-    animation:change 150s ease-in infinite forwards;
+    animation:change 50s ease-in infinite forwards;
 
 }
 @keyframes change{
@@ -276,3 +276,4 @@ header{
     .join_cta{margin-right:0;margin-bottom:1rem;}
     .materials_cta{margin-left:0;}
 }
+

@@ -15,7 +15,7 @@ a{
     text-decoration:none;
 }
 
-.backdrop{
+.backdropx{
     height:100%;
     width:100vw;
     position:fixed;
@@ -113,6 +113,7 @@ a{
     z-index:3;
     display:none;
     opacity:0;
+    background:rgba(0, 0, 0, 0.691);
 }
 
 
@@ -382,12 +383,12 @@ nav{
 .all_stuff{
     background:#fff;
     padding:2.5rem 1rem;
-    width:85%;
+    width:100%;
     margin:auto;
     position: fixed;
-    bottom:120%;
     transition:  0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index:2;
+    box-sizing: border-box;
 }
 
 .close_modal{
@@ -412,3 +413,10 @@ nav{
 .approve{background:rgb(8, 118, 128);}
 .delete{background:red;}
 .approve svg,.delete svg{color:#fff;width:16px;height:25px;}
+
+.showingall{
+    overflow-y: scroll;
+    height: 100%;
+    /* bottom: 120%; */
+    top:0;
+}

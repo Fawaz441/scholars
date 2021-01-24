@@ -1,1 +1,16 @@
-<h1>This is the dashboard!</h1>
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="{% static 'css/dash.css' %}">
+{% endblock css %}
+{% block content %}
+{% include 'navbar.html' %}
+<div class="dash-wrapper">
+    
+    
+</div>
+<style>
+    .login_btn_cta{display:none;}
+</style>
+{% endblock %}

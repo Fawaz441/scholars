@@ -1,8 +1,8 @@
 *{margin:0;padding:0;font-family:Montserrat}
 body{overflow-x:hidden}
 .white_txt{color:#fff}
-.backdrop{height:100vh;width:100vw;background:rgba(0,0,0,.637);display:none;position:fixed}
-.bdrop_block{display:block!important;opacity:1}
+.backdrop{height:100vh;width:100vw;background:rgba(0,0,0,.637);display:none;position:fixed;z-index:9}
+.backdrop.bdrop_block{display:block!important;opacity:1}
 .inline{display:inline}
 a{text-decoration:none}
 ul{list-style:none}
@@ -27,20 +27,20 @@ nav ul li .login_btn_cta:hover{color:#fff}
 .brand svg{height:100%;width:100%}
 #nav_small,.mobile_big{display:none}
 #nav_small{position:relative;cursor:pointer;right:2rem}
-#nav_small span{border-radius:50px;display:block;height:3px;background:#000;transition:.4s cubic-bezier(.6,-.28,.735,.045)}
+#nav_small span{border-radius:50px;display:block;height:3px;background:#fff;transition:.4s cubic-bezier(.6,-.28,.735,.045)}
 #nav_small span:first-of-type{width:37px}
 #nav_small span:nth-of-type(2){width:30px;margin-top:.4rem}
 #nav_small.expanded span:first-of-type{transform:rotate(135deg) translateY(-2px)}
 #nav_small.expanded span:nth-of-type(2){transform:rotate(45deg) translateY(-6px)}
-.mobile_big{display:none;height:50vh;z-index:4;position:fixed;width:250px;background:#fff;flex-direction:column;align-items:center;border-radius:3px;margin-left:-120%;transition:.5s ease}
-.outside{margin-left:0}
-.mobile_big ul{margin-top:10vh}
+@media(max-width:450px){
+    nav{padding-left:20px;padding-right:0px;}
+    nav ul{display:none}
+    .mobile_big{display:flex}
+    #nav_small{display:block}
+    }
+.mobile_big{display:none;z-index:10;position:fixed;width:250px;background:#fff;flex-direction:column;align-items:center;border-radius:3px;margin-left:-120%;transition:.5s ease}
+.mobile_big.outside{margin-left:0;display:flex;}
+.mobile_big ul{padding:2rem 0;}
 .mobile_big ul li{margin-bottom:1.6rem}
 .mobile_big ul li a{color:#000}
 .mobile_big .mobile_login_btn_cta{padding:10px 1.5rem;background:#fa8231;color:#fff;border-radius:5px}
-@media(max-width:450px){
-nav{padding-left:20px}
-nav ul{display:none}
-.mobile_big{display:flex}
-#nav_small{display:block}
-}

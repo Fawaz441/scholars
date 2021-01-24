@@ -43,9 +43,12 @@ viewBox="0 0 608 608"
         <li><a href="{% url 'scholars:adverts' %}" class="ads">Adverts <span></span></a>
      
         </li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Learn & Earn</a></li>
         {% if not request.user.is_authenticated %}
         <li><a href="{% url 'users:login' %}" class="login_btn_cta">Log In</a></li>
         {% else %}
+        <li><a href="{% url 'users:dashboard' %}">Dashboard</a></li>
         <li><a href="{% url 'users:logout' %}">Log out</a></li>
         {% endif %}
     </ul>
@@ -63,11 +66,14 @@ viewBox="0 0 608 608"
         {% endif %}
         <li><a href="{% url 'scholars:materials' %}">Materials</a></li>
         <li><a href="{% url 'scholars:universities' %}">PQs</a></li>
-        <li><a href="{% url 'scholars:adverts' %}" >Adverts <span></span></a>
+        <li><a href="{% url 'scholars:adverts' %}" >Buy & Sell <span></span></a>
         </li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Learn & Earn</a></li>
         {% if not request.user.is_authenticated %}
         <li><a href="{% url 'users:login' %}" class="mobile_login_btn_cta">Log In</a></li>
         {% else %}
+        <li><a href="{% url 'users:dashboard' %}">Dashboard</a></li>
         <li><a href="{% url 'users:logout' %}">Log out</a></li>
         {% endif %}
     </ul>
@@ -76,12 +82,23 @@ viewBox="0 0 608 608"
 
 <script src="{% static 'js/base.js' %}"></script>
 <script>
-    var hamb = document.querySelector("#nav-icon2");
-    var bdrop = document.querySelector(".backdrop");
-    var mobile_nav = document.querySelector(".mobile_big");
-    hamb.addEventListener("click",() => {
-        mobile_nav.classList.toggle("outside");
-        bdrop.classList.toggle("bdrop_block");
-        hamb.classList.toggle('open');
-    })
+    var hamb = document.querySelectorAll("#nav_small");
+    var bdrop = document.querySelectorAll(".backdrop");
+    var mobile_nav = document.querySelectorAll(".mobile_big");
+    if(hamb.length > 0 && bdrop.length > 0 && mobile_nav.length > 0){
+        console.log('fresh')
+        hamb[0].addEventListener("click",() => {
+            mobile_nav[0].classList.add("outside");
+            bdrop[0].classList.add("bdrop_block");
+            hamb[0].classList.add('expanded');
+        })
+    }
+    if(bdrop.length > 0){
+        bdrop[0].addEventListener('click',() => {
+            mobile_nav[0].classList.remove("outside");
+            bdrop[0].classList.remove("bdrop_block");
+            hamb[0].classList.remove('expanded');
+
+        })
+    }
 </script>
