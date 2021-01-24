@@ -110,6 +110,13 @@ PHONENUMBER_DEFAULT_REGION = 'NG'
 PHONENUMBER_DB_FORMAT = 'NATIONAL'
 
 LOGIN_URL = 'users:login'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
 # LOGIN_REDIRECT_URL = 'users:dashboard'
 # LOGIN_REDIRECT_URL = 'users:dashboard'
 if dev:
